@@ -1,0 +1,32 @@
+{{>header}}
+{{>navbar}}
+<section class="my-5 container">
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Author</th>
+                <th>Department</th>
+                <th>pages' number</th>             
+            </tr>
+        </thead>
+        <tbody>
+            {{#if hasBooks}}
+            {{#each sortedBooks}}
+            <tr>
+                <td>{{name}}</td>
+                <td>{{author}}</td>
+                <td>{{department}}</td>
+                <td>{{pages}}</td>
+
+            </tr>
+            {{/each}}
+            {{else}}
+            <tr class="alert alert-danger">
+                <td colspan="3" class="text-center">no data  yet</td>
+            </tr>
+            {{/if}}
+        </tbody>
+    </table>
+</section>
+{{>footer}}

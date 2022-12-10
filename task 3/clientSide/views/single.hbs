@@ -1,0 +1,24 @@
+{{>header}}
+{{>navbar}}
+<section class="my-5 container">
+    {{#unless result}}
+    <div class="alert alert-danger">
+        Invalid task id
+    </div>
+    {{else}}
+    <div class="row">
+        <div class="col-4">
+            book name: {{result.name}}
+        </div>
+        <div class="col-4">
+            author: {{result.author}}
+        </div><div class="col-4">
+            department: {{result.department}}
+        </div>
+        <div class="col-6">
+            pages' number: {{result.pages}}
+        </div>
+    </div>
+    {{/unless}}
+</section>
+{{>footer}}

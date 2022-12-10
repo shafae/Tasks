@@ -1,0 +1,22 @@
+{{>header}}
+{{>navbar}}
+<section class="my-5 container">
+    <form method="post" action="/addBookLogic">
+        <div class="mb-3">
+            <input class="form-control" name="name" placeholder="name">
+        </div>
+        <div class="mb-3">
+            <input class="form-control" name="author" placeholder="author">
+        </div>
+        <div class="mb-3">
+            <input class="form-control" name="department" placeholder="department" >
+        </div>
+        <div class="mb-3">
+            <input class="form-control" name="pages" placeholder="pages' number" type="number"  >
+        </div>
+        <div class="mb-3">
+            <button class="btn btn-primary">Add</button>
+        </div>
+    </form>
+</section>
+{{>footer}}

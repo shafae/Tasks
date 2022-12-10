@@ -1,0 +1,55 @@
+{{>header}}
+{{>navbar}}
+<section class="my-5 container">
+    <form method="post">
+    <div>
+        <div class="mb-3">
+            <input class="form-control" name="name" placeholder="name">
+        </div>
+       <div class="mb-3">
+            <a href="/searchResult" class="btn btn-primary mx-3">search</a>
+        </div>
+    </div>
+    </form>
+    <hr>
+    <div>
+        <a href="/sortByNumber" class="btn btn-primary mx-3">sort By pages' number</a>
+        <a href="/sortByName" class="btn btn-primary mx-3">sort By name</a>
+
+    </div>
+<hr>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Author</th>
+                <th>Department</th>
+                <th>pages' number</th>
+                <th>Actions</th>              
+            </tr>
+        </thead>
+        <tbody>
+            {{#if hasBooks}}
+            {{#each books}}
+            <tr>
+                <td>{{name}}</td>
+                <td>{{author}}</td>
+                <td>{{department}}</td>
+                <td>{{pages}}</td>
+
+                <td>
+                    <a href="/single/{{id}}" class="btn btn-primary mx-3">show</a>
+                    <a href="/edit/{{id}}" class="btn btn-warning mx-3">Edit</a>
+                    <a href="/del/{{id}}" class="btn btn-danger mx-3">Delete</a>
+                </td>
+            </tr>
+            {{/each}}
+            {{else}}
+            <tr class="alert alert-danger">
+                <td colspan="3" class="text-center">no data  yet</td>
+            </tr>
+            {{/if}}
+        </tbody>
+    </table>
+</section>
+{{>footer}}
